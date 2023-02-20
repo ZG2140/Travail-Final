@@ -1,0 +1,26 @@
+#Ne pas oublier de mettre mettre la variable annee selon l'ecriture suivante : An=nombre d'annees
+
+nboucle= (floor(An/5+1)
+for(n in 0:9) {
+bor.x[n]=20*n
+}
+for(n in 0:49) {
+bor.y[n]=20*n
+}
+Fonction_evo= function(nboucle) {
+for (N  in 1:nboucle)  ) {
+		if N==1 { 
+			Mat.compo=matrix(nrow=nboucle,ncol=4)
+			colnames(Mat.compo) = Nom.etats
+			table_t0=as.table(table(etats_0$etats)	
+			Mat.compo[N,]= prop.table(table_t0)
+		}
+		ELSE { 
+			etatsxy(x=bor.x, y=bor.y){}
+			table_t1=as.table(table(etats_t1$etats)
+			Mat.compo[N,]=prop.table(table_t1)
+		}
+	}
+view(Mat.compo)
+return(Mat.compo)
+}

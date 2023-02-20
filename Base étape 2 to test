@@ -7,37 +7,39 @@ source('C:\\Users\\natha\\OneDrive\\Documents\\Université\\Session 2\\Bio109\\A
 lgt.df=nrow(etats_0)
 X<-etats_0[n,1]
 Y<-etats_0[n,2]
+Nom.etats = c(“B”, “M”, “T”, “R”)
 
-
-tirage_t1 <- FUNCTION(etats_t1, Proba_trans[i,]) { 
-  RES= rmultinom(n=1, size=1, prob=Proba_trans[i,])
-  etats_t1[which(res==1)]
+tirage_t1 <- FUNCTION(Nom.etats, Proba_trans[i,]) { 
+  res= rmultinom(n=1, size=1, prob=Proba_trans[i,])
+  Nom.etats[which(res==1)]
 }
-etatsxy= FUNCTION (x,y) {
-  for( n in 1:lgt.df) {
+etatsxy= function(x,y) {
+  for(n in 1:lgt.df) {
     if(x==X & y==Y) {
       etats=etats_0[n,3]
-      IF(etats=='B'){
+      if(etats=='B'){
          i=1
         resultats=tirage_t1(etats_t1,Prob_trans[i,])
       }
-      ELSE{ 
-        IF( etats=='M') {
+      else{ 
+        if( etats=='M') {
            i=2
           resultats=tirage_t1(etats_t1,Prob_trans[i,])
         }
-        ELSE{ 
-          IF(etats=='T'){
+        else{ 
+          if(etats=='T'){
              i=3
             resultats=tirage_t1(etats_t1,Prob_trans[i,])
           }
-          ELSE{
+          else{
              i=4
             resultats=tirage_t1(etats_t1,Prob_trans[i,])
           }
+        else{}
         }
       }
-      etats_0[n,3]=resultats
+      etats_t1[n,3]=resultats
     }
   }
+  return(etats_t1)
 }  

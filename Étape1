@@ -28,7 +28,6 @@ for(n in 1:nrow(etats_0))  {
   else {
     etats_0[n,3]= "R"
   }
+  return(etats_0)
 }
-n=n+1
-RETURN(Matrice.etats)
-}
+
